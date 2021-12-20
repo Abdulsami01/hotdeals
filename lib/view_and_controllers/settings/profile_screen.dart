@@ -152,7 +152,8 @@ class ProfileScreen extends GetView<SettingsController> {
                 ));
                 return ;
               }
-            controller.updateUser(controller.iFile!);
+           print("updateUser called");
+            controller.updateUser(controller!.iFile!);
           },
           child: Container(
             height: 50,

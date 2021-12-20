@@ -101,14 +101,11 @@ if(instance.read(AppStrings.token)==null || instance.read(AppStrings.token)=="")
         {
           userData["userName"]=userNameController.text;
         }
-        if(file !=null)
-          {
-            String imageUrl= await FirebaseStorageService.postFile(file, "profiles/");
-            userData["photoUrl"]=imageUrl;
-
-          }
-
-
+        if(file !=null) {
+          String imageUrl = await FirebaseStorageService.postFile(
+              file, "profiles/");
+          userData["photoUrl"] = imageUrl;
+        }
         await FirebaseFirestore.instance
             .collection('USERS').doc( Get
             .find<LocalDatabase>()

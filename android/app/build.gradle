@@ -61,7 +61,12 @@ android {
         prod {
             dimension "flavor-type"
             applicationIdSuffix ".prod"
-            manifestPlaceholders = [appName: "HotDeals"]
+            manifestPlaceholders = [appName: "HotDealsHemet"]
+        }
+        pro {
+            dimension "flavor-type"
+            applicationIdSuffix ".pro"
+            manifestPlaceholders = [appName: "HotDealsHemet"]
         }
 
     }
