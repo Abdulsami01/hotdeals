@@ -1,6 +1,8 @@
 import 'dart:io';
+import 'package:hotdealsgemet/view_and_controllers/checkout_page/checkout_screen.dart';
 import 'package:hotdealsgemet/view_and_controllers/home_screen/home_screen.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+
 import 'package:uuid/uuid.dart';
 
 import 'package:get/get_instance/src/extension_instance.dart';
@@ -54,7 +56,7 @@ class CreateDealController extends GetxController
 
   late  XFile? image;
    late ImagePicker _picker;
-  late File iFile;
+  late File? iFile;
   bool isImageSelected=false;
 
 
@@ -72,8 +74,10 @@ class CreateDealController extends GetxController
 
   pickImageFormGallary()
   async{
-     image = await _picker.pickImage(source: ImageSource.gallery);
+  image = await _picker.pickImage(source: ImageSource.gallery);
      iFile=await File(image!.path);
+
+
      isImageSelected=true;
      update();
   }
@@ -90,13 +94,14 @@ class CreateDealController extends GetxController
 
   data()
 async{
-  // print("called offerings funtion");
-  //
-  // Offerings offerings = await Purchases.getOfferings();
-  // if (offerings.current != null) {
-  //   print("all data");
-  // }
-  // print(offerings.all.length);
+  print("called offerings funtion");
+
+  Offerings offerings = await Purchases.getOfferings();
+  if (offerings.current != null) {
+    print("all data");
+  }
+  
+  print(offerings.all.length);
 
 
 }
@@ -105,11 +110,11 @@ async{
   createDeal(File file)
  async {
    updateButtonStatus(true);
-   String dealImage = await FirebaseStorageService.postFile(file,"hari");
 
-   Map<String,String> dealData={};
 
-   dealData["imageLink"]=dealImage;
+   Map<String,dynamic> dealData={};
+
+   dealData["imageLink"]=file.path;
    dealData["userId"]=(Get.find<LocalDatabase>().getStorageInstance.read(AppStrings.token)).toString();
    dealData["dealUniqId"]=Uuid().v1();
    dealData["businessName"]=BusinessNameController.text;
@@ -123,9 +128,9 @@ async{
    dealData["expireData"]="null";
    dealData["paidData"]="null";
    dealData["paidType"]="null";
-   await Get.find<FireStoreGateway>().createDeal(dealData);
 
-   Get.offAll(HomeScreen());
+
+   Get.to(CheckOutScreen(dealData));
 
    // go to payment procedure
 
@@ -140,5 +145,8 @@ async{
      update();
    }
 
-
+  @override
+  void dispose() {
+    Get.delete<CreateDealController>();
+  }
 }

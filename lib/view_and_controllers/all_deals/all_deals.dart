@@ -42,7 +42,9 @@ class AllDeals extends GetView<AllDealsController> {
 
                               return InkWell(
                                   onTap: (){
-                                    Get.find<LocalDatabase>().getToken== "" || Get.find<LocalDatabase>().getToken== null ? null : controller.addToFavDeal(controller.listOfDeals[index].id);
+                                    Get.find<LocalDatabase>().getToken== "" || Get.find<LocalDatabase>().getToken== null ? null :
+                                    controller.updateDealToFav(controller.listOfDeals[index].id);
+                                   // controller.addToFavDeal(controller.listOfDeals[index].id);
                                   },
                                   child: DealWidget(controller.listOfDeals[index]));
 

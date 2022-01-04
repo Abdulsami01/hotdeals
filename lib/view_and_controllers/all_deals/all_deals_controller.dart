@@ -4,9 +4,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:hotdealsgemet/core/api_calls/firebase_storage.dart';
 import 'package:hotdealsgemet/core/app_rss/app_strings.dart';
+import 'package:hotdealsgemet/core/app_services/fav_mixin.dart';
 import 'package:hotdealsgemet/core/services/local_database.dart';
 
-class AllDealsController extends GetxController {
+class AllDealsController extends GetxController with FavService {
   bool isLoading = false;
   List<DocumentSnapshot> listOfDeals = [];
 
@@ -49,54 +50,7 @@ class AllDealsController extends GetxController {
     print(favDocs);
   }
 
-  addToFavDeal(String id) async {
-    //checking if this document is already in database or not
-    var q = await FirebaseFirestore.instance
-        .collection('Fav')
-        .doc(instance.read(AppStrings.token))
-        .collection("Favs")
-        .get();
-        List<DocumentSnapshot> d=q.docs;
-        print(d.length);
-    if (d.isEmpty || d.length==0) {
-       print("this fav list is empty");
-      await FirebaseFirestore.instance
-          .collection('Fav')
-          .doc(instance.read(AppStrings.token))
-          .collection("Favs")
-          .doc(id)
-          .set({"id": id});
-    }
-    else {
-      print("document is not null");
-      List<DocumentSnapshot> dd=d.where((element) => element.id==id).toList();
-      if(dd.isEmpty)
-        {
-          print("adding to fav list");
-          await FirebaseFirestore.instance
-              .collection('Fav')
-              .doc(instance.read(AppStrings.token))
-              .collection("Favs")
-              .doc(id)
-              .set({"id": id});
-
-        }else
-          {
-            //delete
-            print("already this deals added in fav list so deleting");
-            await FirebaseFirestore.instance
-                .collection('Fav')
-                .doc(instance.read(AppStrings.token))
-                .collection("Favs")
-                .doc(id).delete();
-
-          }
-
-
-    }
-  }
-
-
+  updateDealToFav(String id);
 
 }
 

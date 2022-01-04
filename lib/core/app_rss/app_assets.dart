@@ -8,6 +8,7 @@ class AppAssets
   static String business="assets/images/business.jpg";
   static String search="assets/images/search.png";
   static String powerOff="assets/images/power-off.png";
+  static String success_payment="assets/images/success_payment.jpg";
 
 
 
@@ -26,7 +27,6 @@ class AppAssets
   static String privacy_policy="assets/icons/privacy_policy.png";
   static String terms_conditions="assets/icons/terms_conditions.png";
   static String contact_us="assets/icons/contact_us.png";
-
 
 
 

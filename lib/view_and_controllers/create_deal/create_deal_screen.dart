@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hotdealsgemet/core/extensions/package_imports_and_exports.dart';
+import 'package:hotdealsgemet/view_and_controllers/checkout_page/checkout_screen.dart';
 
 import 'create_deal_controller.dart';
 
@@ -99,7 +100,7 @@ class CreateDeal extends GetView<CreateDealController> {
                                   width: .4)),
                           alignment: Alignment.center,
                           child: controller.isImageSelected
-                              ? Image.file(controller.iFile)
+                              ? Image.file(controller.iFile!)
                               : Image(
                                   image:
                                       AssetImage(AppAssets.gallaru_camera_icon),
@@ -454,15 +455,16 @@ class CreateDeal extends GetView<CreateDealController> {
                           border: InputBorder.none,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color.fromRGBO(233, 230, 230, 100),
                                 width: .4),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color.fromRGBO(233, 230, 230, 100),
-                                width: .4),
+                                width: .4
+                            ),
                           ),
                         ),
                         onSubmitted: (value) {
@@ -536,7 +538,8 @@ class CreateDeal extends GetView<CreateDealController> {
                           onPressed: controller.isLoading
                               ? () {}
                               : () {
-                            controller.data();
+
+                           controller.data();
 
                                   if (controller.isLoading) {
                                     return;
@@ -607,7 +610,7 @@ class CreateDeal extends GetView<CreateDealController> {
                                     return;
                                   }
 
-                                     controller.createDeal(controller.iFile);
+                                     controller.createDeal(controller.iFile!);
                                 },
                           splashColor: Colors.orange,
                           child: controller.isLoading
@@ -636,7 +639,7 @@ class CreateDeal extends GetView<CreateDealController> {
                           materialTapTargetSize: MaterialTapTargetSize.padded,
                           animationDuration: Duration(seconds: 1),
                           minWidth: double.infinity,
-                          color: AppColors.red.withOpacity(.9),
+                          color: AppColors.colorPalleteRed,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5)),
                           visualDensity: VisualDensity.adaptivePlatformDensity),

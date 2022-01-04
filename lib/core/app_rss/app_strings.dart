@@ -10,6 +10,8 @@ class AppStrings {
     User Collection Strings
   */
   static const USERS = "USERS";
+  static const businessDictonary ="BusinessDictonary";
+
 
   static const dateTime = "DateTime";
   static const eMail = "eMail";
@@ -19,13 +21,18 @@ class AppStrings {
   static const userUniqId = "userUniqId";
 
   static const businessText =
-      "Are you a business owner looking for more customers? Do you want your business to be advertised on our platform? Do you feel that all the paper advertising magazines are outdated,and dont offer potential customers an easy way to see and get your deals? advertising with us is simple and easy.just click on the phone icon and contact us so we can help you get started today!                                                     ";
+      "Are you a business owner looking for more customers? Do you want to increase your sales? Do you want to be up-to-date with the new times of advertising? We've got you! Advertising on our platform is simple and easy. Just click the icon below, follow the prompts, and get started today. If you have any questions, you can visit our FAQ page, or you are welcome to contact us and speak to a live agent from our contact page.";
 
 
 
  static const deals="Deals";
+ static const bussinessId="BussinessId";
 
   static const dealUniqId="dealUniqId";
+
+
+
+
 
 
 }

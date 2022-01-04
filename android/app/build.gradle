@@ -25,6 +25,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 def keystoreProperties = new Properties()
 def keystorePropertiesFile = rootProject.file('key.properties')
@@ -56,12 +57,12 @@ android {
                 {
                     dimension "flavor-type"
                     applicationIdSuffix ".dev"
-                    manifestPlaceholders = [appName: "HotDeals dev"]
+                    manifestPlaceholders = [appName: "Hot Deals dev"]
                 }
         prod {
             dimension "flavor-type"
             applicationIdSuffix ".prod"
-            manifestPlaceholders = [appName: "HotDealsHemet"]
+            manifestPlaceholders = [appName: "Hot Deals Hemet"]
         }
         pro {
             dimension "flavor-type"
@@ -75,7 +76,7 @@ android {
         applicationId "lauramonk.app.hotdealsgemet"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 9
+        versionCode 10
         versionName "1.0.8"
         multiDexEnabled true
     }
@@ -99,7 +100,23 @@ flutter {
     source '../..'
 }
 
+
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+
+}
+
+
+buildscript {
+    repositories {
+        // ...
+        maven { url 'https://plugins.gradle.org/m2/' } // Gradle Plugin Portal
+    }
+    dependencies {
+        // ...
+        // OneSignal-Gradle-Plugin
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.12.10, 0.99.99]'
+    }
 }
