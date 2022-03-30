@@ -1,33 +1,120 @@
 {
   "project_info": {
-    "project_number": "477643770220",
-    "project_id": "hot-deals-pro",
-    "storage_bucket": "hot-deals-pro.appspot.com"
+    "project_number": "375430055892",
+    "project_id": "hot-deals-dev",
+    "storage_bucket": "hot-deals-dev.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:477643770220:android:5276ad0a9e1d2a90da4b49",
+        "mobilesdk_app_id": "1:375430055892:android:93d3dcd4bb3494f10f7841",
         "android_client_info": {
-          "package_name": "lauramonk.app.hotdealsgemet.pro"
+          "package_name": "lauramonk.app.hotdealsgemet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "477643770220-3qo41p6b8fuf12u0eultm9b9jou933ee.apps.googleusercontent.com",
+          "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBig_GxZ-jle1D-N8p82QBd0B6IrPxayn4"
+          "current_key": "AIzaSyB6o8z_og6VtpSXHAj2UNT3VV2fHj9S0mE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "477643770220-3qo41p6b8fuf12u0eultm9b9jou933ee.apps.googleusercontent.com",
+              "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375430055892:android:3b392795af3a25d80f7841",
+        "android_client_info": {
+          "package_name": "lauramonk.app.hotdealsgemet.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6o8z_og6VtpSXHAj2UNT3VV2fHj9S0mE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375430055892:android:599b26bac1796fc20f7841",
+        "android_client_info": {
+          "package_name": "lauramonk.app.hotdealsgemet.pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6o8z_og6VtpSXHAj2UNT3VV2fHj9S0mE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375430055892:android:68c329b6687730de0f7841",
+        "android_client_info": {
+          "package_name": "lauramonk.app.hotdealsgemet.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6o8z_og6VtpSXHAj2UNT3VV2fHj9S0mE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375430055892-dd8c86qrakoaaol0a79n2n3ob57kg3tu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

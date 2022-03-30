@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>477643770220-h4h3u1tdbcomhta2v8dcnnf3ac5ppeom.apps.googleusercontent.com</string>
+	<string>375430055892-vplhpemllkh7hj6v9ocnqa812pf5opvf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.477643770220-h4h3u1tdbcomhta2v8dcnnf3ac5ppeom</string>
+	<string>com.googleusercontent.apps.375430055892-vplhpemllkh7hj6v9ocnqa812pf5opvf</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAFyCvTjWTqOS6mdwSrMPsKapzSc1ZXm14</string>
+	<string>AIzaSyBl2ENBCTQVPmImYju_faJXP3hL-SITsKA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>477643770220</string>
+	<string>375430055892</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>lauramonk.app.hotdealsgemet.pro</string>
+	<string>lauramonk.app.hotDeals.pro</string>
 	<key>PROJECT_ID</key>
-	<string>hot-deals-pro</string>
+	<string>hot-deals-dev</string>
 	<key>STORAGE_BUCKET</key>
-	<string>hot-deals-pro.appspot.com</string>
+	<string>hot-deals-dev.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:477643770220:ios:c7d818015960b026da4b49</string>
+	<string>1:375430055892:ios:4ca64c6df3798ae20f7841</string>
 </dict>
 </plist>

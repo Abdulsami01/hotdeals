@@ -1,6 +1,5 @@
 import 'package:hotdealsgemet/core/extensions/package_imports_and_exports.dart';
 
-
 class CreateUser extends GetView<CreateUserController> {
   @override
   Widget build(BuildContext context) {
@@ -16,36 +15,38 @@ class CreateUser extends GetView<CreateUserController> {
             mainAxisSize: MainAxisSize.min,
             children: [
               VerticalSpacing(value: 30),
+              Container(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: IconButton(
+                      onPressed: () {
+                        controller.goBack();
+                      },
+                      icon: Icon(Icons.arrow_back)),
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 15),
-                      child: IconButton(
-                          onPressed: () {
-                            controller.goBack();
-                          },
-                          icon: Icon(Icons.arrow_back)),
-                    ),
-                  ),
-                  Container(
-                    height: 200,
-                    width: 200,
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            fit: BoxFit.contain,
-                            image: AssetImage(AppAssets.applogo))),
-                  ),
+                      // width: double.infinity,
+                      height: 200,
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(20),
+                      margin: EdgeInsets.only(left: 35),
+                      child: Center(
+                        child: Image(
+                          fit: BoxFit.fitHeight,
+                          image: AssetImage(AppAssets.applogo),
+                        ),
+                      )),
                 ],
               ),
               VerticalSpacing(value: 15),
               Text(
-                "e-mail",
+                "E-mail",
                 style: textStyleWidget(letterSpacing: .2),
               ),
               VerticalSpacing(),
@@ -91,7 +92,7 @@ class CreateUser extends GetView<CreateUserController> {
               ),
               VerticalSpacing(value: 15),
               Text(
-                "password",
+                "Password",
                 style: textStyleWidget(letterSpacing: .2),
               ),
               VerticalSpacing(),
@@ -102,6 +103,7 @@ class CreateUser extends GetView<CreateUserController> {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: TextField(
+                  obscureText: true,
                   controller: controller.password_controller,
                   focusNode: controller.passwordFocus,
                   style: textStyleWidget(
@@ -141,22 +143,45 @@ class CreateUser extends GetView<CreateUserController> {
                             return;
                           }
                           if (controller.email_controller.text.trim().isEmpty) {
-                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                              content:const  Text("Enter E-mail"),
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
+                              content: const Text("Enter E-mail"),
                             ));
                             return;
                           } else if (!controller
                               .email_controller.text.isEmail) {
                             return;
                           }
+                          //
+                          //hari
                           if (controller.password_controller.text
                               .trim()
                               .isEmpty) {
-                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                              content:const  Text("Enter E-mail"),
-                            ));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: const Text("Enter Password"),
+                              ),
+                            );
+
                             return;
                           }
+
+                          //sami testing
+                          // if (controller
+                          //     .password_controller.text.isAlphabetOnly) {
+                          //   ScaffoldMessenger.of(context).showSnackBar(
+                          //     const SnackBar(
+                          //       content: const Text(
+                          //           "Please enter alphabet and numbers"),
+                          //     ),
+                          //   );
+                          //
+                          //   return;
+                          // } else if (!controller
+                          //     .password_controller.text.isEmpty) {
+                          //   return;
+                          // }
+
                           controller.createAccount();
                           // if (controller.email_controller.text.trim().isEmpty) {
                           //   return;
@@ -168,17 +193,18 @@ class CreateUser extends GetView<CreateUserController> {
                           //   return;
                           // }
                         },
-                  child:  controller.isLoading
+                  child: controller.isLoading
                       ? const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(
-                        color: Colors.white,
-                        strokeWidth: 2,
-                      )):Text(
-                    "Create a account",
-                    style: textStyleWidget(color: Colors.white),
-                  ),
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            color: Colors.white,
+                            strokeWidth: 2,
+                          ))
+                      : Text(
+                          "Create a account",
+                          style: textStyleWidget(color: Colors.white),
+                        ),
                   materialTapTargetSize: MaterialTapTargetSize.padded,
                   animationDuration: Duration(seconds: 1),
                   minWidth: double.infinity,
@@ -203,7 +229,7 @@ class CreateUser extends GetView<CreateUserController> {
               ),
               VerticalSpacing(value: 15),
               InkWell(
-                onTap: (){
+                onTap: () {
                   controller.GoToHomepage();
                 },
                 child: Container(

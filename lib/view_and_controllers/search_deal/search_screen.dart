@@ -83,7 +83,7 @@ class SearchDeals extends GetView<SearchDealController> {
                             image: AssetImage(AppAssets.search),
                           ),
                           VerticalSpacing(value: 25),
-                          Text("Enter deal name to search or No search Results for your queary",style: textStyleWidget(color: Colors.black.withOpacity(.5),fontSize: FontSize.normalText,fontWeight: FontWights.semiBold),textAlign: TextAlign.center,),
+                          Text("Type in search bar the business you would like to find",style: textStyleWidget(color: Colors.black.withOpacity(.5),fontSize: FontSize.normalText,fontWeight: FontWights.semiBold),textAlign: TextAlign.center,),
 
                         ],
                       ),

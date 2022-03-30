@@ -7,38 +7,36 @@ class FavDeals extends GetView<FavDealsController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<FavDealsController>(
-      init: FavDealsController(),
+        init: FavDealsController(),
         builder: (FavDealsController controller) {
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
-              title: Text("Your Fav Deals"),
-              backgroundColor: Colors.red,
+              title: Text("Favourite Deals"),
+              backgroundColor: AppColors.colorPalleteRed,
             ),
             body: controller.isLoading
                 ? Center(
-              child: SizedBox(
-                width: 25,
-                height: 25,
-                child: CircularProgressIndicator(),
-              ),
-            )
+                    child: SizedBox(
+                      width: 25,
+                      height: 25,
+                      child: CircularProgressIndicator(),
+                    ),
+                  )
                 : SingleChildScrollView(
-              child: Column(
-                children: [
-                  ListView.builder(
-                      primary: false,
-                      shrinkWrap: true,
-                      itemCount: controller.listOfAllFavDeals.length,
-                      itemBuilder: (_, index) {
-
-                        return DealWidget(controller.listOfAllFavDeals[index]);
-
-                      })
-                ],
-              ),
-            ),
-
+                    child: Column(
+                      children: [
+                        ListView.builder(
+                            primary: false,
+                            shrinkWrap: true,
+                            itemCount: controller.listOfAllFavDeals.length,
+                            itemBuilder: (_, index) {
+                              return DealWidget(
+                                  controller.listOfAllFavDeals[index]);
+                            })
+                      ],
+                    ),
+                  ),
           );
         });
   }

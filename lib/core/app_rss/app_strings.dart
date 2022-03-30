@@ -21,7 +21,7 @@ class AppStrings {
   static const userUniqId = "userUniqId";
 
   static const businessText =
-      "Are you a business owner looking for more customers? Do you want to increase your sales? Do you want to be up-to-date with the new times of advertising? We've got you! Advertising on our platform is simple and easy. Just click the icon below, follow the prompts, and get started today. If you have any questions, you can visit our FAQ page, or you are welcome to contact us and speak to a live agent from our contact page.";
+      "Are you a Hemet business owner looking for more customers? Would you like your business to be advertised on a user-friendly platform? Tired of the 'old-fashioned' paper advertisements that get thrown in the trash - not to mention is bad for our planet?  Well, we have the solution!  Advertising with us is quick, simple and easy. Just click below on the 'CREATE BUSINESS ACCOUNT' icon to get started. There are NO CONTRACTS, you can cancel at any time, and you can even change your ad anytime as you see fit. You can check out our FAQ page for frequently asked questions, OR you can email, text, or call us with any questions you may have.";
 
 
 

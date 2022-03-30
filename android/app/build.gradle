@@ -34,7 +34,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -76,8 +76,8 @@ android {
         applicationId "lauramonk.app.hotdealsgemet"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 10
-        versionName "1.0.8"
+        versionCode 13
+        versionName "1.0.11"
         multiDexEnabled true
     }
 

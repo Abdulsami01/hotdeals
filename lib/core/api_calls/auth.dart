@@ -22,6 +22,7 @@ class AuthenticationService extends GetxController
        userCredential= await  FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
      } on FirebaseAuthException catch (e)
      {
+       print("sdfsdfsfsdfsadfdsfdsafsdfdsa");
 
        return userCredential;
      }
@@ -64,6 +65,7 @@ class AuthenticationService extends GetxController
       return data;
     }catch (e)
     {
+      return null;
 
     }
 

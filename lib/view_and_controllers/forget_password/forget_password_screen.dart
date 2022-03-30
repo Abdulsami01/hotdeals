@@ -45,7 +45,7 @@ class ForgetPassword extends GetView<ForgetPasswordController> {
               ),
               VerticalSpacing(value: 15),
               Text(
-                "Reset password link will be sent to your email which one you entered below",
+                "Reset password link will be sent to your email which you entered below",
                 style: textStyleWidget(
                     letterSpacing: .2, color: Colors.black.withOpacity(.5)),
               ),

@@ -7,13 +7,13 @@ TextStyle textStyleWidget({
   double letterSpacing: 1.0,
   double fontSize: 15.0,
   FontWeight fontWeight: FontWeight.normal,
-  bool isUnderline: false
+  bool isUnderline: false,
 }) {
   return GoogleFonts.poppins(
-      color: color,
-      letterSpacing: letterSpacing,
-      fontWeight: fontWeight,
-      fontSize: fontSize,
-    decoration: isUnderline ? TextDecoration.underline :TextDecoration.none,);
-
+    color: color,
+    letterSpacing: letterSpacing,
+    fontWeight: fontWeight,
+    fontSize: fontSize,
+    decoration: isUnderline ? TextDecoration.underline : TextDecoration.none,
+  );
 }

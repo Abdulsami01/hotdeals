@@ -14,6 +14,7 @@ import 'package:hotdealsgemet/view_and_controllers/login_screen/login_screen.dar
 import 'package:hotdealsgemet/view_and_controllers/settings/settings.dart';
 import 'package:hotdealsgemet/view_and_controllers/settings/settings_screen_controller.dart';
 import 'package:hotdealsgemet/view_and_controllers/tc_pp/about_us_screen.dart';
+import 'package:hotdealsgemet/view_and_controllers/user_deals/user_deals.dart';
 
 import 'package:hotdealsgemet/widget/custom_spacing.dart';
 
@@ -32,56 +33,85 @@ ClipRRect SideDrawer(BuildContext context) {
                   children: [
                     VerticalSpacing(value: 20),
                     Container(
-
                       alignment: Alignment.center,
                       child: Get.find<LocalDatabase>().getToken == null ||
                               Get.find<LocalDatabase>().getToken == ""
                           ? Container(
-
-
-                          alignment: Alignment.center,
-                            height: 150,
-                            child: MaterialButton(
-                                onPressed: () {
-                                  // login funtion
-                                  Get.find<LoginController>().buttonControl(false);
-                                  Get.offAll(LoginScreen());
-                                },
-                                color: Colors.red,
-                                child: Text(
-                                  "Login",
-                                  style: textStyleWidget(color: Colors.white),
-                                )),
-                          )
+                              alignment: Alignment.center,
+                              height: 150,
+                              child: MaterialButton(
+                                  onPressed: () {
+                                    // login funtion
+                                    Get.find<LoginController>()
+                                        .buttonControl(false);
+                                    Get.offAll(LoginScreen());
+                                  },
+                                  color: Colors.red,
+                                  child: Text(
+                                    "Login",
+                                    style: textStyleWidget(color: Colors.white),
+                                  )),
+                            )
                           : Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                VerticalSpacing(value: 10),
-                                Get.find<SettingsController>()
-                                    .json["photoUrl"]== "" ? Container():    CircleAvatar(
-
-                                  backgroundImage:  NetworkImage(
-                                        Get.find<SettingsController>()
-                                            .json["photoUrl"]),
-                                  radius: 40,
+                                VerticalSpacing(value: 5),
+                                Text(
+                                  'Hi',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 17,
                                   ),
-
+                                ),
+                                //content of top box
                                 VerticalSpacing(value: 10),
-                                Text(Get.find<SettingsController>()
-                                    .json["userName"]),
-                                VerticalSpacing(),
-                                Text(Get.find<SettingsController>()
-                                    .json["eMail"],style: textStyleWidget(color: Colors.black.withOpacity(.5)),),
+                                Text(
+                                  Get.find<SettingsController>().json["eMail"],
+                                  style: textStyleWidget(
+                                      color: Colors.black.withOpacity(.5)),
+                                ),
                                 VerticalSpacing(value: 10),
+                                Text(
+                                  'Welcome to Hot Deals',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 17,
+                                  ),
+                                ),
+                                VerticalSpacing(value: 10),
+                                // VerticalSpacing(value: 10),
+                                // // Text('Welcome to HOtdeals hemet'),
+                                // Get.find<SettingsController>()
+                                //             .json["photoUrl"] ==
+                                //         //  Image.asset('user.png')
+                                //         ""
+                                //     //"gs://hot-deals-dev.appspot.com/user.png"
+                                //     ? Container()
+                                //     : CircleAvatar(
+                                //         backgroundImage: NetworkImage(
+                                //             Get.find<SettingsController>()
+                                //                 .json["photoUrl"]),
+                                //         radius: 40,
+                                //         backgroundColor: Colors.transparent,
+                                //       ),
+                                // VerticalSpacing(value: 10),
+                                // Text(Get.find<SettingsController>()
+                                //     .json["userName"]),
+                                // VerticalSpacing(),
+                                // Text(
+                                //   Get.find<SettingsController>().json["eMail"],
+                                //   style: textStyleWidget(
+                                //       color: Colors.black.withOpacity(.5)),
+                                // ),
+                                // VerticalSpacing(value: 10),
                               ],
                             ),
                       decoration: BoxDecoration(
                           border:
                               Border.all(color: Colors.black.withOpacity(.2))),
                     ),
-
                     InkWell(
                       onTap: () {
                         Get.back();
@@ -120,7 +150,7 @@ ClipRRect SideDrawer(BuildContext context) {
                         ),
                       ),
                     ),
-
+                    //Fav deals
                     Get.find<LocalDatabase>().getToken == null ||
                             Get.find<LocalDatabase>().getToken == ""
                         ? Container()
@@ -165,55 +195,92 @@ ClipRRect SideDrawer(BuildContext context) {
                               ),
                             ),
                           ),
-
                     Get.find<LocalDatabase>().getToken == null ||
-                        Get.find<LocalDatabase>().getToken == ""? Container() :     InkWell(
-                      onTap: () {
-
-                        Get.to(FavDeals());
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Container(
-                          height: 50,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(5),
-                              border: Border.all(color: Colors.black12)),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 30,
-                                height: 20,
-                                padding: EdgeInsets.only(left: 10),
-                                child: Image(
-                                  image: AssetImage(
-                                    AppAssets.fav,
-                                  ),
-                                  fit: BoxFit.cover,
-                                  color: Colors.black,
+                            Get.find<LocalDatabase>().getToken == "fav"
+                        ? Container()
+                        : InkWell(
+                            onTap: () {
+                              Get.to(FavDeals());
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: Container(
+                                height: 50,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(5),
+                                    border: Border.all(color: Colors.black12)),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 30,
+                                      height: 20,
+                                      padding: EdgeInsets.only(left: 10),
+                                      child: Icon(
+                                        Icons.favorite_border,
+                                        color: Colors.black87.withOpacity(0.7),
+                                      ),
+                                    ),
+                                    HorizontalSpacing(value: 10),
+                                    Text(
+                                      "Favourite Deals",
+                                      style: textStyleWidget(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 14,
+                                          color: Colors.black),
+                                    )
+                                  ],
                                 ),
                               ),
-                              HorizontalSpacing(value: 10),
-                              Text(
-                                "Saved Deals",
-                                style: textStyleWidget(
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14,
-                                    color: Colors.black),
-                              )
-                            ],
+                            ),
                           ),
-                        ),
-                      ),
-                    ),
-
+                    Get.find<LocalDatabase>().getToken == null ||
+                            Get.find<LocalDatabase>().getToken == ""
+                        ? Container()
+                        : InkWell(
+                            onTap: () {
+                              Get.to(UserDeals());
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: Container(
+                                height: 50,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(5),
+                                    border: Border.all(color: Colors.black12)),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 30,
+                                      height: 20,
+                                      padding: EdgeInsets.only(left: 10),
+                                      child: Image(
+                                        image: AssetImage(
+                                          AppAssets.fav,
+                                        ),
+                                        fit: BoxFit.cover,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    HorizontalSpacing(value: 10),
+                                    Text(
+                                      "Biz Owners",
+                                      style: textStyleWidget(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 14,
+                                          color: Colors.black),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                     InkWell(
                       onTap: () {
-
                         Get.to(BusinessOwners());
-
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -251,13 +318,9 @@ ClipRRect SideDrawer(BuildContext context) {
                         ),
                       ),
                     ),
-
-
                     InkWell(
                       onTap: () {
-
                         Get.to(FAQ());
-
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -295,11 +358,11 @@ ClipRRect SideDrawer(BuildContext context) {
                         ),
                       ),
                     ),
-
                     InkWell(
                       onTap: () {
-                        Get.to(PPAndTC(type: "PP",));
-
+                        Get.to(PPAndTC(
+                          type: "PP",
+                        ));
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -337,11 +400,11 @@ ClipRRect SideDrawer(BuildContext context) {
                         ),
                       ),
                     ),
-
                     InkWell(
                       onTap: () {
-                        Get.to(PPAndTC(type: "TC",));
-
+                        Get.to(PPAndTC(
+                          type: "TC",
+                        ));
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -379,16 +442,12 @@ ClipRRect SideDrawer(BuildContext context) {
                         ),
                       ),
                     ),
-
                     InkWell(
                       onTap: () {
-
                         Get.to(ContactUs());
-
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
-
                         child: Container(
                           height: 50,
                           alignment: Alignment.center,
@@ -423,7 +482,6 @@ ClipRRect SideDrawer(BuildContext context) {
                         ),
                       ),
                     ),
-
                     Get.find<LocalDatabase>().getToken == null ||
                             Get.find<LocalDatabase>().getToken == ""
                         ? Container()

@@ -63,4 +63,52 @@ class FireStoreGateway extends GetxController {
         .doc(userID)
         .set(data);
   }
+
+
+
+ static Future<String> getVideo()
+  async{
+  DocumentSnapshot documentSnapshot=  await FirebaseFirestore.instance
+        .collection("Videos")
+        .doc("V8Sof0DTpHehnUZD8Zrt").get();
+
+    return documentSnapshot["url"];
+  }
+
+
+  static deleteDeal(dealId)
+  async{
+    await FirebaseFirestore.instance
+        .collection("Deals")
+        .doc(dealId).delete();
+  }
+
+
+  static getSingleDeal(String id)
+ async {
+    DocumentSnapshot documentSnapshot=  await FirebaseFirestore.instance
+        .collection("Deals")
+        .doc(id).get();
+
+    print("the doc is exsits ${documentSnapshot.exists}");
+
+
+    return documentSnapshot;
+  }
+
+
+
+
+  static  updateSingleDeal(String id,map)
+  async {
+     await FirebaseFirestore.instance
+        .collection("Deals")
+        .doc(id).update(map);
+
+
+
+
+
+  }
+
 }

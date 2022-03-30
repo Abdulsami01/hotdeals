@@ -31,7 +31,6 @@ class CheckOutScreen extends GetView<CheckoutController> {
                   fontSize: FontSize.h1),
             ),
           ),
-
           body: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
@@ -40,7 +39,6 @@ class CheckOutScreen extends GetView<CheckoutController> {
                   VerticalSpacing(value: 10),
                   Container(
                     width: double.infinity,
-
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -117,12 +115,15 @@ class CheckOutScreen extends GetView<CheckoutController> {
                     ),
                   ),
                   VerticalSpacing(value: 20),
-                  Text("\$65. per month for one time / ONE MONTH ad.  This is NOT on recurring monthly payments. On this plan your ad will automatically delete after one month. If you wish to continue your ad, you will need to resubmit a new ad with a new payment.",       textAlign: TextAlign.left,
+                  Text(
+                    "\$65. per month for one time / ONE MONTH ad.  This is NOT on recurring monthly payments. On this plan your ad will automatically delete after one month. If you wish to continue your ad, you will need to resubmit a new ad with a new payment.",
+                    textAlign: TextAlign.left,
                     style: textStyleWidget(
                         letterSpacing: 1.4,
                         fontWeight: FontWeight.bold,
                         fontSize: FontSize.normalText,
-                        color: Colors.black.withOpacity(.7)),)
+                        color: Colors.black.withOpacity(.7)),
+                  )
                 ],
               ),
             ),
@@ -133,22 +134,25 @@ class CheckOutScreen extends GetView<CheckoutController> {
               onTap: controller.isLoading
                   ? () {}
                   : () async {
-
-                   await controller.payNow(dealData);
+                      await controller.payNow(dealData);
 
                       //print(purchaserInfo.allPurchaseDates);
                     },
               child: Container(
                 height: 45,
-
                 alignment: Alignment.center,
                 child: controller.isLoading
                     ? SizedBox(
                         width: 15,
                         height: 15,
-                        child: CircularProgressIndicator(),
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                        ),
                       )
-                    : Text("Pay now",style: textStyleWidget(color: AppColors.white),),
+                    : Text(
+                        "Pay now",
+                        style: textStyleWidget(color: AppColors.white),
+                      ),
                 decoration: BoxDecoration(
                   color: AppColors.colorPalleteRed,
                   borderRadius: BorderRadius.circular(5),

@@ -14,7 +14,7 @@ class ProfileScreen extends GetView<SettingsController> {
       return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text("Prifle Settings"),
+          title: Text("Profile Settings"),
           backgroundColor: Colors.red,
         ),
         body: Padding(
@@ -108,10 +108,7 @@ class ProfileScreen extends GetView<SettingsController> {
                 ),
                 child: TextField(
                   controller: controller.userNameController,
-
-
                   style: textStyleWidget(
-
                       fontSize: FontSize.normalText,
                       fontWeight: FontWights.normal,
                       color: Colors.black.withOpacity(.5),
@@ -135,7 +132,6 @@ class ProfileScreen extends GetView<SettingsController> {
                       borderSide: BorderSide(color: Colors.red, width: .4),
                     ),
                   ),
-
                   cursorColor: Colors.black45,
                 ),
               ),
@@ -145,15 +141,16 @@ class ProfileScreen extends GetView<SettingsController> {
         extendBody: true,
         bottomNavigationBar: InkWell(
           onTap: () {
-            if(controller.userNameController.text.isEmpty && controller.iFile==null)
-              {
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  content:const  Text("Select image or Enter userName to update user profile"),
-                ));
-                return ;
-              }
-           print("updateUser called");
-            controller.updateUser(controller!.iFile!);
+            if (controller.userNameController.text.isEmpty &&
+                controller.iFile == null) {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: const Text(
+                    "Select image or Enter userName to update user profile"),
+              ));
+              return;
+            }
+            print("updateUser called");
+            controller.updateUser(controller.iFile!);
           },
           child: Container(
             height: 50,
@@ -161,10 +158,16 @@ class ProfileScreen extends GetView<SettingsController> {
             decoration: BoxDecoration(
                 color: Colors.red, borderRadius: BorderRadius.circular(5)),
             alignment: Alignment.center,
-            child: controller.isLoading ? SizedBox(width: 18,height:18,child: CircularProgressIndicator(),):Text(
-              "Update",
-              style: textStyleWidget(color: Colors.white, fontSize: 16),
-            ),
+            child: controller.isLoading
+                ? SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(),
+                  )
+                : Text(
+                    "Update",
+                    style: textStyleWidget(color: Colors.white, fontSize: 16),
+                  ),
           ),
         ),
       );

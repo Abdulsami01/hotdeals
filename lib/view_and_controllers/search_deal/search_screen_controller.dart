@@ -2,10 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:hotdealsgemet/core/api_calls/firebase_storage.dart';
 import 'package:hotdealsgemet/core/app_rss/app_strings.dart';
+import 'package:hotdealsgemet/core/app_services/filter_valid_deals.dart';
 import 'package:hotdealsgemet/core/extensions/package_imports_and_exports.dart';
 import 'package:hotdealsgemet/core/services/local_database.dart';
 
-class SearchDealController extends GetxController {
+class SearchDealController extends GetxController  with FitlerDeals{
   TextEditingController searchController = TextEditingController();
   bool isLoading = false;
   List<DocumentSnapshot> listOfDeals = [];
@@ -20,14 +21,15 @@ class SearchDealController extends GetxController {
     loadingController(true);
     listOfDeals.clear();
     List<DocumentSnapshot> d = await FirebaseStorageService.getAllDeals();
-    d.where((element) =>
+
+    List<DocumentSnapshot> dd=  returnValidDeals(d).where((element) =>
     searchController.text.contains(element["shopName"])
         ||
         searchController.text.contains(element["description"])
 
     )
         .toList();
-    listOfDeals.addAll(d);
+    listOfDeals.addAll(dd);
 
     print("listOfDeals length is ${listOfDeals.length}");
     loadingController(false);

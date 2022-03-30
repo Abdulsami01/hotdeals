@@ -6,7 +6,7 @@ import 'contact_us_screen_controller.dart';
 class ContactUs extends GetView<ContactUsController> {
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<SplashScreenController>(
+    return GetBuilder<ContactUsController>(
       builder: (controller) {
         return Scaffold(
           backgroundColor: Colors.white,
@@ -32,90 +32,216 @@ class ContactUs extends GetView<ContactUsController> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     VerticalSpacing(value: 10),
-
-                    Text(
-                     "For Help Text",
-                      textAlign: TextAlign.left,
-                      style: textStyleWidget(
-                          letterSpacing: 1.4,
-                          fontWeight: FontWeight.w600,
-                          fontSize: FontSize.normalText,
-                          color: AppColors.secondary_text_color),
-                    ),
-                    VerticalSpacing(value: 10),
-                    Text(
-                      "714-496-9970",
-                      textAlign: TextAlign.left,
-                      style: textStyleWidget(
-                          letterSpacing: 1.4,
-                          fontWeight: FontWights.extraBold,
-                          fontSize: FontSize.h2,
-                          color: AppColors.secondary_text_color),
-                    ),
-                    VerticalSpacing(value: 20),
-                    Text(
-                      "For phone call support",
-                      textAlign: TextAlign.left,
-                      style: textStyleWidget(
-                          letterSpacing: 1.4,
-                          fontWeight: FontWeight.w600,
-                          fontSize: FontSize.normalText,
-                          color: AppColors.secondary_text_color),
-                    ),
-                    VerticalSpacing(value: 10),
-                    Text(
-                      "949-514-8810",
-                      textAlign: TextAlign.left,
-                      style: textStyleWidget(
-                          letterSpacing: 1.4,
-                          fontWeight: FontWights.extraBold,
-                          fontSize: FontSize.h2,
-                          color: AppColors.secondary_text_color),
-                    ),
-                    VerticalSpacing(value: 20),
-                    Text(
-                      "For email help line",
-                      textAlign: TextAlign.left,
-                      style: textStyleWidget(
-                          letterSpacing: 1.4,
-                          fontWeight: FontWeight.w600,
-                          fontSize: FontSize.normalText,
-                          color: AppColors.secondary_text_color),
-                    ),
-                    VerticalSpacing(value: 10),
-                    Text(
-                      "LauraMonk.HotDeals@gmail.com",
-                      textAlign: TextAlign.left,
-                      style: textStyleWidget(
-
-                          fontWeight: FontWights.extraBold,
-                          fontSize: FontSize.h1,
-                          color: AppColors.secondary_text_color),
-                    ),
-
-                    VerticalSpacing(value: 20),
-
                     Container(
-                      width: 200,
-                      height:200,
+                      width: 150,
+                      height: 150,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage(AppAssets.applogo)
-                          )
-                      ),
+                              image: AssetImage(AppAssets.applogo))),
                     ),
-                    VerticalSpacing(value: 15),
-                    Text(
-                      "HEMET CA. 92545",
-                      textAlign: TextAlign.left,
-                      style: textStyleWidget(
 
+                    Text(
+                      "HEMET CA.\n 92545",
+                      textAlign: TextAlign.center,
+                      style: textStyleWidget(
                           fontWeight: FontWights.normal,
                           fontSize: FontSize.normalText,
                           color: AppColors.secondary_text_color),
                     ),
+                    VerticalSpacing(value: 15),
+                    Container(
+                      margin: EdgeInsets.all(5),
+                      padding: EdgeInsets.fromLTRB(0, 15, 0, 40),
+                      //width: MediaQuery.of(context).size.width,
+                      //height: 39,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(
+                          color: Colors.black12,
+                          width: 1,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.red.withOpacity(0.1),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'For Phone Call or Text Support',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                          VerticalSpacing(value: 15),
+                          Row(
+                            children: [
+                              HorizontalSpacing(value: 15),
+                              Icon(
+                                Icons.call,
+                                color: Colors.black,
+                              ),
+                              HorizontalSpacing(value: 15),
+                              Text(
+                                " 951-599-8889",
+                                textAlign: TextAlign.center,
+                                style: textStyleWidget(
+                                  letterSpacing: 1.4,
+                                  fontWeight: FontWights.bold,
+                                  fontSize: FontSize.h2,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          VerticalSpacing(value: 10),
+                          Divider(
+                            color: Colors.black12,
+                          ),
+                          VerticalSpacing(value: 10),
+                          Text(
+                            "For email support",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                          VerticalSpacing(value: 15),
+                          Row(
+                            children: [
+                              HorizontalSpacing(value: 15),
+                              Icon(
+                                Icons.mail,
+                                color: Colors.black,
+                              ),
+                              VerticalSpacing(value: 10),
+                              HorizontalSpacing(value: 18),
+                              Text(
+                                "LauraMonk.HotDeals \n @gmail.com",
+                                textAlign: TextAlign.center,
+                                style: textStyleWidget(
+                                  letterSpacing: 1.4,
+                                  fontWeight: FontWights.bold,
+                                  fontSize: FontSize.h1,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    VerticalSpacing(value: 10),
+                    // ElevatedButton(
+                    //   onPressed: null,
+                    //   child: Text(
+                    //     'Make a phone call',
+                    //     style: TextStyle(
+                    //       color: Colors.white,
+                    //     ),
+                    //   ),
+                    //   style: ButtonStyle(
+                    //     backgroundColor:
+                    //         MaterialStateProperty.all<Color>(Colors.red),
+                    //   ),
+                    // ),
 
+                    //
+                    // Text(
+                    //   "For Help Text",
+                    //   textAlign: TextAlign.left,
+                    //   style: textStyleWidget(
+                    //       letterSpacing: 1.4,
+                    //       fontWeight: FontWeight.w600,
+                    //       fontSize: FontSize.normalText,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    // VerticalSpacing(value: 10),
+                    // Text(
+                    //   "714-496-9970",
+                    //   textAlign: TextAlign.left,
+                    //   style: textStyleWidget(
+                    //       letterSpacing: 1.4,
+                    //       fontWeight: FontWights.extraBold,
+                    //       fontSize: FontSize.h2,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    // VerticalSpacing(value: 20),
+                    // Text(
+                    //   "For phone call support",
+                    //   textAlign: TextAlign.left,
+                    //   style: textStyleWidget(
+                    //       letterSpacing: 1.4,
+                    //       fontWeight: FontWeight.w600,
+                    //       fontSize: FontSize.normalText,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    // VerticalSpacing(value: 10),
+                    // Text(
+                    //   "( 951 ) 599-8889",
+                    //   textAlign: TextAlign.left,
+                    //   style: textStyleWidget(
+                    //       letterSpacing: 1.4,
+                    //       fontWeight: FontWights.extraBold,
+                    //       fontSize: FontSize.h2,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    // VerticalSpacing(value: 20),
+                    // Text(
+                    //   "For email support",
+                    //   textAlign: TextAlign.left,
+                    //   style: textStyleWidget(
+                    //       letterSpacing: 1.4,
+                    //       fontWeight: FontWeight.w600,
+                    //       fontSize: FontSize.normalText,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    // VerticalSpacing(value: 10),
+                    // Text(
+                    //   "LauraMonk.HotDeals@gmail.com",
+                    //   textAlign: TextAlign.left,
+                    //   style: textStyleWidget(
+                    //       fontWeight: FontWights.normal,
+                    //       fontSize: FontSize.subText_01,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    //
+                    // VerticalSpacing(value: 20),
+
+                    // Container(
+                    //   width: 200,
+                    //   height:200,
+                    //   decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //           fit: BoxFit.cover,
+                    //           image: AssetImage(AppAssets.applogo)
+                    //       )
+                    //   ),
+                    // ),
+                    // VerticalSpacing(value: 15),
+                    // Text(
+                    //   "HEMET CA.\n 92545",
+                    //   textAlign: TextAlign.center,
+                    //
+                    //   style: textStyleWidget(
+                    //
+                    //       fontWeight: FontWights.normal,
+                    //       fontSize: FontSize.normalText,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    // InkWell(
+                    //     onTap: (){
+                    //
+                    //       controller.testingPurpose();
+                    //     },
+                    //     child: Text("testing"))
                   ],
                 ),
               ),

@@ -19,7 +19,7 @@ class ForgetPasswordController extends GetxController
   String value=  await Get.find<AuthenticationService>().requestOtpMail(emailController.text);
   if(value==AppStrings.success)
     {
-      Get.defaultDialog(title: "Forget Password Request",middleText: "Check Your Email to Reset Passoword");
+      Get.defaultDialog(title: "Forget Password Request",middleText: "Check Your Email to Reset Password");
     }
     if(value==AppStrings.failure)
     {

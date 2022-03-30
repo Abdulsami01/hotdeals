@@ -5,9 +5,10 @@ import 'package:get/get.dart';
 import 'package:hotdealsgemet/core/api_calls/firebase_storage.dart';
 import 'package:hotdealsgemet/core/app_rss/app_strings.dart';
 import 'package:hotdealsgemet/core/app_services/fav_mixin.dart';
+import 'package:hotdealsgemet/core/app_services/filter_valid_deals.dart';
 import 'package:hotdealsgemet/core/services/local_database.dart';
 
-class AllDealsController extends GetxController with FavService {
+class AllDealsController extends GetxController with FavService , FitlerDeals {
   bool isLoading = false;
   List<DocumentSnapshot> listOfDeals = [];
 
@@ -28,9 +29,11 @@ class AllDealsController extends GetxController with FavService {
 
      loadingController(true);
 
+     listOfDeals.clear();
 
+     List<DocumentSnapshot> listOfDeal = await FirebaseStorageService.getAllDeals();
+    listOfDeals=returnValidDeals(listOfDeal);
 
-     listOfDeals = await FirebaseStorageService.getAllDeals();
      print("list of deals lenth is ${listOfDeals.length}");
      loadingController(false);
      update();
