@@ -105,7 +105,7 @@ class _BusinessOwnersState extends State<BusinessOwners> {
                   children: [
                     Container(child: VideoPlayer(controller)),
                     Align(
-                      alignment: Alignment.center,
+                      alignment: Alignment.bottomLeft,
                       child: InkWell(
                         onTap: () {
                           print("button  pressed");
@@ -119,7 +119,7 @@ class _BusinessOwnersState extends State<BusinessOwners> {
                           controller.value.isPlaying
                               ? Icons.pause
                               : Icons.play_arrow,
-                          size: 50,
+                          size: 40,
                           color: Colors.red,
                         ),
                       ),
