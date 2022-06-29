@@ -49,7 +49,7 @@ class _PricingInfoState extends State<PricingInfo> {
             ),
             VerticalSpacing(value: 5),
             Text(
-              "Cancel at any time after 3 months. Your add will automatically stay up throughout every monthly cycle, and you will be billed on the same date every month.",
+              "Your add will automatically stay up throughout every monthly cycle, and you will be billed on the same date every month.",
               textAlign: TextAlign.left,
               style: textStyleWidget(
                   fontWeight: FontWeight.normal,
@@ -57,12 +57,12 @@ class _PricingInfoState extends State<PricingInfo> {
                   color: Colors.black.withOpacity(.7)),
             ),
             VerticalSpacing(value: 15),
-            Text(
-              'Note: Subscription plan will be launch soon',
-              style: TextStyle(
-                color: Colors.red,
-              ),
-            ),
+            // Text(
+            //   'Note: Subscription plan will be launch soon',
+            //   style: TextStyle(
+            //     color: Colors.red,
+            //   ),
+            // ),
             VerticalSpacing(value: 5),
             Container(
               height: 1,
@@ -90,7 +90,7 @@ class _PricingInfoState extends State<PricingInfo> {
             ),
             VerticalSpacing(value: 5),
             Text(
-              "This is not recurring monthly payments.On this plan your ad will automatically delete after the one month cycle.",
+              "This is not recurring monthly payments. On this plan your ad will automatically delete after the one month cycle.",
               textAlign: TextAlign.left,
               style: textStyleWidget(
                   fontWeight: FontWeight.normal,

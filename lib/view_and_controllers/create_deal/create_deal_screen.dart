@@ -336,7 +336,7 @@ class CreateDeal extends GetView<CreateDealController> {
                           LengthLimitingTextInputFormatter(8),
                         ],
                         decoration: InputDecoration(
-                          hintText: "coupon code must start with HDH",
+                          hintText: "coupon code start with HDH",
                           hintStyle: textStyleWidget(
                               fontSize: FontSize.smallText,
                               fontWeight: FontWights.light,

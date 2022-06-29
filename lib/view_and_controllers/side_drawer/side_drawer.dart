@@ -59,10 +59,10 @@ ClipRRect SideDrawer(BuildContext context) {
                               children: [
                                 VerticalSpacing(value: 5),
                                 Text(
-                                  'Hi',
+                                  'Welcome',
                                   style: TextStyle(
                                     color: Colors.red,
-                                    fontSize: 17,
+                                    fontSize: 15,
                                   ),
                                 ),
                                 //content of top box
@@ -73,13 +73,13 @@ ClipRRect SideDrawer(BuildContext context) {
                                       color: Colors.black.withOpacity(.5)),
                                 ),
                                 VerticalSpacing(value: 10),
-                                Text(
-                                  'Welcome to Hot Deals',
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 17,
-                                  ),
-                                ),
+                                // Text(
+                                //   'Welcome to Hot Deals',
+                                //   style: TextStyle(
+                                //     color: Colors.red,
+                                //     fontSize: 17,
+                                //   ),
+                                // ),
                                 VerticalSpacing(value: 10),
                                 // VerticalSpacing(value: 10),
                                 // // Text('Welcome to HOtdeals hemet'),
@@ -224,7 +224,7 @@ ClipRRect SideDrawer(BuildContext context) {
                                     ),
                                     HorizontalSpacing(value: 10),
                                     Text(
-                                      "Favourite Deals",
+                                      "Favorite Deals",
                                       style: textStyleWidget(
                                           fontWeight: FontWeight.normal,
                                           fontSize: 14,

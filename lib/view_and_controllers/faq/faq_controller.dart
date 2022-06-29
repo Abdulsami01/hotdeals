@@ -12,7 +12,7 @@ class FAQController extends GetxController {
     {
       "q": "How much does it cost to run my ad?",
       "a":
-          "For our launch, we are offering 1 month FREE to our first 25 customers. Currently, the monthly advertising rate is \$65 for 1 month (approximately 30 days), or \$50 if you set up for recurring automatic payment each month, billed monthly.."
+          "For our launch, we are offering 1 month FREE to our first 50 customers. Currently, the monthly advertising rate is \$65 for 1 month (approximately 30 days), or \$50 if you set up for recurring automatic payment each month, billed monthly."
     },
     {
       "q":
@@ -22,9 +22,9 @@ class FAQController extends GetxController {
     },
     {
       "q":
-          "How does this advertising compare to other places as in magazine ads like Yelp, Nextdoor, Google Ads, etc?",
+          "How does this advertising compare to other places like Yelp, Google Ads, Nextdoor, Groupon, magazine mailers etc?",
       "a":
-          "Basically our rates are far less than those other advertising campaigns and we focus on only Hemet businesses. We are great for businesses who don’t want to pay “per click fees,” “traffic fees,” or “lead fees” as Yelp, Google Ads, and Thumbtack do. Also, we are purely about deals only, unlike Nextdoor in which your business ads stand a chance of getting lost amongst an array of other junk. Groupon is very similar to us but we don’t ask the users to pay us any money (and they like that). We charge the users nothing to find deals in Hemet, hence, they are more likely to use this app. Also, we don’t take a percentage of your income like Groupon does. "
+          "Basically our rates are far less than those other advertising campaigns and we focus on only Hemet businesses. We are great for businesses who don’t want to pay “per click fees,” “traffic fees,” or “lead fees”. Also, we are purely about deals only, unlike Nextdoor in which your business ads stand a chance of getting lost amongst an array of other junk. Groupon is very similar to us but we don’t ask the users to pay us any money (and they like that). We charge the users nothing to find deals in Hemet, hence, they are more likely to use this app. Also, we don’t take a percentage of your income like Groupon does. "
     },
     {
       "q": "Can I list more than one ad? ",
@@ -69,7 +69,7 @@ class FAQController extends GetxController {
     {
       "q": "I am a user, not a business, how does this work for me?",
       "a":
-          "Users have access to the app for free. We want as many people using this app as possible, which is why we don’t charge for the app, and we don’t collect any money from users. "
+          "Customers have access to the app for free. We want as many people using this app as possible, which is why we don’t charge for the app, and we don’t collect any money from customers. "
     },
     {
       "q": "Do I pay for the deal through the app?  ",

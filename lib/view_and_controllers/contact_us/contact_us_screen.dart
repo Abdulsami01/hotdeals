@@ -41,15 +41,15 @@ class ContactUs extends GetView<ContactUsController> {
                               image: AssetImage(AppAssets.applogo))),
                     ),
 
-                    Text(
-                      "HEMET CA.\n 92545",
-                      textAlign: TextAlign.center,
-                      style: textStyleWidget(
-                          fontWeight: FontWights.normal,
-                          fontSize: FontSize.normalText,
-                          color: AppColors.secondary_text_color),
-                    ),
-                    VerticalSpacing(value: 15),
+                    // Text(
+                    //   "HEMET CA.\n 92545",
+                    //   textAlign: TextAlign.center,
+                    //   style: textStyleWidget(
+                    //       fontWeight: FontWights.normal,
+                    //       fontSize: FontSize.normalText,
+                    //       color: AppColors.secondary_text_color),
+                    // ),
+                    VerticalSpacing(value: 45),
                     Container(
                       margin: EdgeInsets.all(5),
                       padding: EdgeInsets.fromLTRB(0, 15, 0, 40),
@@ -124,7 +124,7 @@ class ContactUs extends GetView<ContactUsController> {
                               VerticalSpacing(value: 10),
                               HorizontalSpacing(value: 18),
                               Text(
-                                "LauraMonk.HotDeals \n @gmail.com",
+                                "Support.HotDealsHemet \n @gmail.com",
                                 textAlign: TextAlign.center,
                                 style: textStyleWidget(
                                   letterSpacing: 1.4,

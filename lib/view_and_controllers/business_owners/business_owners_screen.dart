@@ -143,7 +143,7 @@ class _BusinessOwnersState extends State<BusinessOwners> {
                     style: textStyleWidget(
                         letterSpacing: 1.4,
                         fontWeight: FontWeight.normal,
-                        fontSize: FontSize.subText_02,
+                        fontSize: FontSize.subText_01,
                         color: Color(0xFF0a0b10)),
                   ),
                   // TextSpan(

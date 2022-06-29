@@ -12,7 +12,7 @@ class FavDeals extends GetView<FavDealsController> {
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
-              title: Text("Favourite Deals"),
+              title: Text("Favorite Deals"),
               backgroundColor: AppColors.colorPalleteRed,
             ),
             body: controller.isLoading
