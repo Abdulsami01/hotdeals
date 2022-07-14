@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialBinding: initBindings(),
-      title: 'Flutter Demo',
+      title: 'Hot Deals Hemet',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         pageTransitionsTheme: const PageTransitionsTheme(builders: {

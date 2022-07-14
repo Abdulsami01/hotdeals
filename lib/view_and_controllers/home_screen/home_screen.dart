@@ -38,7 +38,7 @@ class HomeScreen extends GetView<HomeScreenController> {
                     drawer: SideDrawer(context),
                     body: SingleChildScrollView(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +48,7 @@ class HomeScreen extends GetView<HomeScreenController> {
                               child: Container(
                                 width: 150,
                                 height: 150,
-                                padding: EdgeInsets.all(20),
+                                //padding: EdgeInsets.all(120),
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -58,48 +58,55 @@ class HomeScreen extends GetView<HomeScreenController> {
                             ),
                             VerticalSpacing(value: 10),
                             Center(
-                              child: Text(
-                                  "The app where you don't have to cut out coupons in order to SAVE MONEY.",
-                                  textAlign: TextAlign.center,
-                                  style: textStyleWidget(
-                                      fontSize: FontSize.smallText,
-                                      fontWeight: FontWights.light,
-                                      color: AppColors.secondary_text_color)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                    "The app where you don't have to cut out coupons in order to SAVE MONEY.",
+                                    textAlign: TextAlign.center,
+                                    style: textStyleWidget(
+                                        fontSize: FontSize.smallText,
+                                        fontWeight: FontWights.light,
+                                        color: AppColors.secondary_text_color)),
+                              ),
                             ),
                             VerticalSpacing(value: 15),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      ButtonWidget("Find Deals",
-                                          Icons.add_to_queue_outlined, () {
-                                        Get.to(AllDeals());
-                                      }),
-                                      ButtonWidget("Contact Us", Icons.call,
-                                          () {
-                                        Get.to(ContactUs());
-                                      }),
-                                    ],
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      Center(
-                                        child: ButtonWidget(
-                                            "Search Deals", Icons.search, () {
-                                          Get.to(SearchDeals());
+                            Container(
+                              width: MediaQuery.of(context).size.width * 1.0,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        ButtonWidget("Find Deals",
+                                            Icons.add_to_queue_outlined, () {
+                                          Get.to(AllDeals());
                                         }),
-                                      ),
-                                      ButtonWidget("FAQ", Icons.question_answer,
-                                          () {
-                                        Get.to(() => FAQ());
-                                      }),
-                                    ],
+                                        ButtonWidget("Contact Us", Icons.call,
+                                            () {
+                                          Get.to(ContactUs());
+                                        }),
+                                      ],
+                                    ),
                                   ),
-                                )
-                              ],
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Center(
+                                          child: ButtonWidget(
+                                              "Search Deals", Icons.search, () {
+                                            Get.to(SearchDeals());
+                                          }),
+                                        ),
+                                        ButtonWidget(
+                                            "FAQ", Icons.question_answer, () {
+                                          Get.to(() => FAQ());
+                                        }),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                             LastButton(
                               "BUSINESS OWNERS",
@@ -128,9 +135,9 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(5),
       child: MaterialButton(
-          height: 90,
+          height: MediaQuery.of(context).size.height / 8,
           onPressed: buttonFuntion,
           splashColor: Colors.orange,
           child: Column(
@@ -149,7 +156,7 @@ class ButtonWidget extends StatelessWidget {
                     name!,
                     textAlign: TextAlign.center,
                     style: textStyleWidget(
-                        color: Colors.black, letterSpacing: 0.7),
+                        color: Colors.black, letterSpacing: 0.4),
                   ),
                 ),
               ),

@@ -51,10 +51,10 @@ class ContactUs extends GetView<ContactUsController> {
                     // ),
                     VerticalSpacing(value: 45),
                     Container(
-                      margin: EdgeInsets.all(5),
-                      padding: EdgeInsets.fromLTRB(0, 15, 0, 40),
-                      //width: MediaQuery.of(context).size.width,
-                      //height: 39,
+                      // margin: EdgeInsets.all(5),
+                      // padding: EdgeInsets.fromLTRB(0, 15, 0, 40),
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 3.5,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(6),
@@ -73,11 +73,13 @@ class ContactUs extends GetView<ContactUsController> {
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+
+                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'For Phone Call or Text Support',
                             style: TextStyle(
+                              height: MediaQuery.of(context).size.height / 300,
                               color: Colors.black,
                             ),
                           ),
@@ -110,6 +112,7 @@ class ContactUs extends GetView<ContactUsController> {
                           Text(
                             "For email support",
                             style: TextStyle(
+                              height: MediaQuery.of(context).size.height / 650,
                               color: Colors.black,
                             ),
                           ),
@@ -123,14 +126,19 @@ class ContactUs extends GetView<ContactUsController> {
                               ),
                               VerticalSpacing(value: 10),
                               HorizontalSpacing(value: 18),
-                              Text(
-                                "Support.HotDealsHemet \n @gmail.com",
-                                textAlign: TextAlign.center,
-                                style: textStyleWidget(
-                                  letterSpacing: 1.4,
-                                  fontWeight: FontWights.bold,
-                                  fontSize: FontSize.h1,
-                                  color: Colors.black,
+                              Container(
+                                width: MediaQuery.of(context).size.width / 1.6,
+                                child: Text(
+                                  "Support.HotDealsHemet@gmail.com",
+                                  //overflow: TextOverflow.ellipsis,
+                                  // softWrap: false,
+                                  // textAlign: TextAlign.center,
+                                  style: textStyleWidget(
+                                    letterSpacing: 1.4,
+                                    fontWeight: FontWights.bold,
+                                    fontSize: FontSize.h1,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                             ],

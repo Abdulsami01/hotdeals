@@ -76,7 +76,7 @@ android {
         applicationId "lauramonk.app.hotdealsgemet"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 13
+        versionCode 17
         versionName "1.0.11"
         multiDexEnabled true
     }
