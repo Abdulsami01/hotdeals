@@ -51,10 +51,10 @@ class ContactUs extends GetView<ContactUsController> {
                     // ),
                     VerticalSpacing(value: 45),
                     Container(
-                      // margin: EdgeInsets.all(5),
-                      // padding: EdgeInsets.fromLTRB(0, 15, 0, 40),
+                      //  padding: EdgeInsets.all(22),
+                      padding: EdgeInsets.fromLTRB(0, 15, 0, 60),
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 3.5,
+                      //height: MediaQuery.of(context).size.height / 3.5,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(6),
