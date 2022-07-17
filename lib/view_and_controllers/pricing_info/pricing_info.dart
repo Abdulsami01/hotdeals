@@ -69,7 +69,8 @@ class _PricingInfoState extends State<PricingInfo> {
               width: double.infinity,
               color: Colors.black.withOpacity(.2),
             ),
-            VerticalSpacing(value: 25),
+            VerticalSpacing(value: 20),
+            Text('Coming Sonn '),
             Text(
               "ONE TIME PLAN :",
               textAlign: TextAlign.left,

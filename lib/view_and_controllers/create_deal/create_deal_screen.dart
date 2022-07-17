@@ -271,6 +271,8 @@ class CreateDeal extends GetView<CreateDealController> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: TextField(
+                        maxLines: null,
+                        expands: true,
                         controller: controller.subDescriptionController,
                         focusNode: controller.subDescriptionFocus,
                         readOnly: controller.readOnly,
@@ -279,7 +281,7 @@ class CreateDeal extends GetView<CreateDealController> {
                             fontWeight: FontWights.normal,
                             color: Colors.black.withOpacity(.5),
                             letterSpacing: 1.2),
-                        keyboardType: TextInputType.streetAddress,
+                        keyboardType: TextInputType.multiline,
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(100),
                         ],
@@ -480,6 +482,8 @@ class CreateDeal extends GetView<CreateDealController> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: TextField(
+                        maxLines: null,
+                        expands: true,
                         controller: controller.shopAddressController,
                         focusNode: controller.shopAddressFocus,
                         readOnly: controller.readOnly,
@@ -491,7 +495,7 @@ class CreateDeal extends GetView<CreateDealController> {
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(70),
                         ],
-                        keyboardType: TextInputType.streetAddress,
+                        keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
                           hintText: "shop address",
                           hintStyle: textStyleWidget(

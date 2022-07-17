@@ -116,14 +116,22 @@ class CheckOutScreen extends GetView<CheckoutController> {
                   ),
                   VerticalSpacing(value: 20),
                   Text(
-                    "\$65. per month for one time / ONE MONTH ad.  This is NOT on recurring monthly payments. On this plan your ad will automatically delete after one month. If you wish to continue your ad, you will need to resubmit a new ad with a new payment.",
+                    "\$50. per month for those who sign up for recurring monthly payments.",
                     textAlign: TextAlign.left,
                     style: textStyleWidget(
                         letterSpacing: 1.4,
                         fontWeight: FontWeight.bold,
                         fontSize: FontSize.normalText,
                         color: Colors.black.withOpacity(.7)),
-                  )
+                  ),
+                  Text(
+                    "Your add will automatically stay up throughout every monthly cycle, and you will be billed on the same date every month.",
+                    textAlign: TextAlign.left,
+                    style: textStyleWidget(
+                        fontWeight: FontWeight.normal,
+                        fontSize: FontSize.normalText,
+                        color: Colors.black.withOpacity(.7)),
+                  ),
                 ],
               ),
             ),

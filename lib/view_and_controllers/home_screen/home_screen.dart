@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:hotdealsgemet/core/extensions/package_imports_and_exports.dart';
 import 'package:hotdealsgemet/core/services/local_database.dart';
@@ -78,7 +79,7 @@ class HomeScreen extends GetView<HomeScreenController> {
                                   Expanded(
                                     child: Column(
                                       children: [
-                                        ButtonWidget("Find Deals",
+                                        ButtonWidget("Deals Today",
                                             Icons.add_to_queue_outlined, () {
                                           Get.to(AllDeals());
                                         }),
@@ -152,8 +153,9 @@ class ButtonWidget extends StatelessWidget {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Text(
+                  child: AutoSizeText(
                     name!,
+                    maxLines: 1,
                     textAlign: TextAlign.center,
                     style: textStyleWidget(
                         color: Colors.black, letterSpacing: 0.4),

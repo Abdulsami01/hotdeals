@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:hotdealsgemet/core/app_rss/app_strings.dart';
 import 'package:hotdealsgemet/core/extensions/package_imports_and_exports.dart';
 
@@ -92,13 +93,13 @@ class ContactUs extends GetView<ContactUsController> {
                                 color: Colors.black,
                               ),
                               HorizontalSpacing(value: 15),
-                              Text(
+                              AutoSizeText(
                                 " 951-599-8889",
                                 textAlign: TextAlign.center,
                                 style: textStyleWidget(
                                   letterSpacing: 1.4,
                                   fontWeight: FontWights.bold,
-                                  fontSize: FontSize.h2,
+                                  fontSize: FontSize.h1,
                                   color: Colors.black,
                                 ),
                               ),
@@ -128,8 +129,9 @@ class ContactUs extends GetView<ContactUsController> {
                               HorizontalSpacing(value: 18),
                               Container(
                                 width: MediaQuery.of(context).size.width / 1.6,
-                                child: Text(
-                                  "Support.HotDealsHemet@gmail.com",
+                                child: AutoSizeText(
+                                  "Support.HotDealsHemet \n @gmail.com",
+                                  maxLines: 2,
                                   //overflow: TextOverflow.ellipsis,
                                   // softWrap: false,
                                   // textAlign: TextAlign.center,
