@@ -151,50 +151,50 @@ ClipRRect SideDrawer(BuildContext context) {
                       ),
                     ),
                     //Fav deals
-                    Get.find<LocalDatabase>().getToken == null ||
-                            Get.find<LocalDatabase>().getToken == ""
-                        ? Container()
-                        : InkWell(
-                            onTap: () {
-                              Get.back();
-                              Get.to(Settings());
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: Container(
-                                height: 50,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(5),
-                                    border: Border.all(color: Colors.black12)),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: 30,
-                                      height: 20,
-                                      padding: EdgeInsets.only(left: 10),
-                                      child: Image(
-                                        image: AssetImage(
-                                          AppAssets.user_profile_icon,
-                                        ),
-                                        fit: BoxFit.cover,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                    HorizontalSpacing(value: 10),
-                                    Text(
-                                      "Profile",
-                                      style: textStyleWidget(
-                                          fontWeight: FontWeight.normal,
-                                          fontSize: 14,
-                                          color: Colors.black),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
+                    // Get.find<LocalDatabase>().getToken == null ||
+                    //         Get.find<LocalDatabase>().getToken == ""
+                    //     ? Container()
+                    //     : InkWell(
+                    //         onTap: () {
+                    //           Get.back();
+                    //           Get.to(Settings());
+                    //         },
+                    //         // child: Padding(
+                    //         //   padding: const EdgeInsets.symmetric(vertical: 10),
+                    //         //   child: Container(
+                    //         //     height: 50,
+                    //         //     alignment: Alignment.center,
+                    //         //     decoration: BoxDecoration(
+                    //         //         color: Colors.white,
+                    //         //         borderRadius: BorderRadius.circular(5),
+                    //         //         border: Border.all(color: Colors.black12)),
+                    //         //     child: Row(
+                    //         //       children: [
+                    //         //         // Container(
+                    //         //         //   width: 30,
+                    //         //         //   height: 20,
+                    //         //         //   padding: EdgeInsets.only(left: 10),
+                    //         //         //   child: Image(
+                    //         //         //     image: AssetImage(
+                    //         //         //       AppAssets.user_profile_icon,
+                    //         //         //     ),
+                    //         //         //     fit: BoxFit.cover,
+                    //         //         //     color: Colors.black,
+                    //         //         //   ),
+                    //         //         // ),
+                    //         //         // HorizontalSpacing(value: 10),
+                    //         //         // Text(
+                    //         //         //   "Profile",
+                    //         //         //   style: textStyleWidget(
+                    //         //         //       fontWeight: FontWeight.normal,
+                    //         //         //       fontSize: 14,
+                    //         //         //       color: Colors.black),
+                    //         //         // )
+                    //         //       ],
+                    //         //     ),
+                    //         //   ),
+                    //         // ),
+                    //       ),
                     Get.find<LocalDatabase>().getToken == null ||
                             Get.find<LocalDatabase>().getToken == "fav"
                         ? Container()
